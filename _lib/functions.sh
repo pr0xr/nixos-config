@@ -29,7 +29,7 @@ _preload () {
 _loadblock () {
 [ -z "$@" ] && return
 for _block in $@; do
-	_preloadblock;
+	_preload;
 	echo "EXECUTING BLOCK \"$_block\""
 	[ -n "$_loaded_block" ] && eval "${_loaded_block}";
      		
@@ -46,7 +46,7 @@ for _block in $@; do
                 _anykey "EXECUTION OF BLOCK \"$_block\" EXPERIENCED ERRORS" 
                 read -p "Enter block or 'shell' for an interactive session: " _block;
             fi
-			_preloadblock;
+			_preload;
 			[ -n "$_loaded_block" ] && eval "${_loaded_block}";
     	done
 done
