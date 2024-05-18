@@ -199,6 +199,7 @@ arch-chroot() {
   SHELL=/bin/bash $pid_unshare chroot "${chroot_args[@]}" -- "$chrootdir" "${args[@]}"
 }
 
+_getopts() {
 while getopts ':hNu:r' flag; do
   case $flag in
     h)
@@ -223,6 +224,7 @@ while getopts ':hNu:r' flag; do
   esac
 done
 shift $(( OPTIND - 1 ))
+}
 
 (( $# )) || die 'No chroot directory specified'
 chrootdir=$1
