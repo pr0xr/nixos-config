@@ -21,6 +21,25 @@ _anykey () {
 echo -e "\n$@"; read -sn 1 -p "Any key to continue..."; echo;
 }
 
+_chroot_postscript () {
+# handle interactively assigned install drive value
+echo -e "#!/bin/bash\nINSTALL_DRIVE=$INSTALL_DRIVE" > "${MNT}${POSTSCRIPT}";
+grep -v "^\s*INSTALL_DRIVE.*" "${0}" >> "${MNT}${POSTSCRIPT}";
+echo -e 'export PS1="(chroot) $PS1"' >> "${MNT}${POSTSCRIPT}";
+#cp "${0}" "${MNT}${POSTSCRIPT}";
+chmod a+x "${MNT}${POSTSCRIPT}"; arch-chroot "${MNT}" "${POSTSCRIPT}";
+}
+
+_display_postinstall_messages () {
+echo "\n\nInstallation complete; Reboot and then execute the post-reboot.sh script in the /root directory."
+echo "\n"
+[ -n "${POSTINSTALL_MSGS:-}" ] && echo "${POSTINSTALL_MSGS}"
+}
+
+_add_postinstall_messags () {
+:
+}
+
 _preload () {
     isurl=false ispath=false isrootpath=false;
     case "$_block" in
@@ -73,4 +92,33 @@ curl -s --user $API_KEY_EMAIL \
     -F to="$EMAIL" \
     -F subject="$SUBJECT" \
     -F text="$TEXT"
+}
+
+_pushover () {
+curl -s \
+    -F "token=$API_KEY_APP_PUSHOVER" \
+    -F "user=$API_KEY_USER_PUSHOVER" \
+    -F "message=${HOSTNAME} was successfully installed." \
+    https://api.pushover.net/1/messages.json
+}
+
+_cleanupChroot () {
+
+    if [[ ! -z "$API_KEY_APP_PUSHOVER" && ! -z "$API_KEY_USER_PUSHOVER" ]]; then
+        MESSAGE="${HOSTNAME} was successfully installed."
+        _pushover
+    fi
+
+    # Remove files We dont need in the system.
+    rm $POSTSCRIPT
+
+}
+
+_postChroot () {
+    if [[ ! -z "$POST_CHROOT" ]]; then
+        _loadblock "$POST_CHROOT"
+    else
+        eject && reboot || reboot
+        echo "postChroot"
+    fi
 }

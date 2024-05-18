@@ -19,4 +19,14 @@ _filesystem_preinstall
 _loadblock "${FSTAB}"
 _filesystem_fstab
 _loadblock "${NIXOS}"
+_nixos_pre
+_chroot_postscript
+fi
+
+if $INCHROOT; then
+_cleanupChroot
+fi
+
+if ! $INCHROOT; then
+_postChroot
 fi
