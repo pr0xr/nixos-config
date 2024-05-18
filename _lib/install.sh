@@ -27,7 +27,7 @@ _chroot_postscript
 fi
 
 if $INCHROOT; then
-_cleanupChroot
+#_cleanupChroot
 fi
 
 if ! $INCHROOT; then
