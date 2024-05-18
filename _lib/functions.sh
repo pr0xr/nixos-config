@@ -1,5 +1,17 @@
 #!/bin/bash
 
+_defaultvalue () {
+# Assign value to a variable in the install script only if unset.
+# Note that *empty* variables that have purposefully been set as empty
+# are not changed.
+#
+# usage:
+#
+# _defaultvalue VARNAME "value if VARNAME is currently unset or empty"
+#
+eval "${1}=\"${!1-${2}}\"";
+}
+
 _anykey () {
 # Provide an alert (with optional custom preliminary message) and pause.
 #
