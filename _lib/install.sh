@@ -8,6 +8,8 @@ _defaultvalue FILESYSTEM _lib/preinstall/filesystem
 _defaultvalue INSTALL_DRIVE /dev/sda
 _defaultvalue NIXOS _lib/preinstall/nixos
 _defaultvalue FSTAB _lib/preinstall/fstab
+_defaultvalue CHROOT _lib/chrootplz
+
 
 [ ! -f "${0}" ] && echo "Don't run this directly from curl. Save to file first." && exit
 MNT=/mnt; TMP=/tmp/archblocks; POSTSCRIPT="/postinstall.sh"
@@ -20,6 +22,7 @@ _loadblock "${FSTAB}"
 _filesystem_fstab
 _loadblock "${NIXOS}"
 _nixos_pre
+_loadblock "${CHROOT}"
 _chroot_postscript
 fi
 
