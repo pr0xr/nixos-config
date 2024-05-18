@@ -21,7 +21,7 @@ _preload () {
 
     if $isurl; then URL="${FILE}";
     elif [ -f "${DIR/%\//}/${FILE}" ]; then URL="file://${FILE}";
-    else URL="${REMOTE/%\//}/archlinux/${FILE}"; fi
+    else URL="${REMOTE/%\//}/${FILE}"; fi
 
     _loaded_block="$(curl -fsL ${URL})";
 }
