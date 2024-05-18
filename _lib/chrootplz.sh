@@ -131,7 +131,7 @@ usage: ${0##*/} chroot-dir [command] [arguments...]
     -u <user>[:group]   Specify non-root user and optional group to use
     -r                  Do not change the resolv.conf within the chroot
 
-If 'command' is unspecified, ${0##*/} will launch /bin/bash.
+If 'command' is unspecified, ${0##*/} will launch /bin/sh.
 
 Note that when using arch-chroot, the target chroot directory *should* be a
 mountpoint. This ensures that tools such as pacman(8) or findmnt(8) have an
@@ -196,7 +196,7 @@ arch-chroot() {
   chroot_args=()
   [[ $userspec ]] && chroot_args+=(--userspec "$userspec")
 
-  SHELL=/bin/bash $pid_unshare chroot "${chroot_args[@]}" -- "$chrootdir" "${args[@]}"
+  SHELL=/bin/sh $pid_unshare chroot "${chroot_args[@]}" -- "$chrootdir" "${args[@]}"
 }
 
 if ENABLE_CLI
