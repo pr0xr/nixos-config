@@ -31,9 +31,9 @@ _preload () {
     esac
     FILE="${_block/%.sh/}.sh";
 
-    if $isurl; then URL="${FILE}";
+    if $isurl; then URL="${FILE}?$(date +%s);
     elif [ -f "${DIR/%\//}/${FILE}" ]; then URL="file://${FILE}";
-    else URL="${REMOTE/%\//}/${FILE}"; fi
+    else URL="${REMOTE/%\//}/${FILE}?$(date +%s)"; fi
 
     _loaded_block="$(curl -fsL ${URL})";
 }
