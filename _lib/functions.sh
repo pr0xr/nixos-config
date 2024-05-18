@@ -31,11 +31,11 @@ _preload () {
     esac
     FILE="${_block/%.sh/}.sh";
 
-    if $isurl; then URL="${FILE}?$(date +%s);
+    if $isurl; then URL="${FILE}";
     elif [ -f "${DIR/%\//}/${FILE}" ]; then URL="file://${FILE}";
-    else URL="${REMOTE/%\//}/${FILE}?$(date +%s)"; fi
+    else URL="${REMOTE/%\//}/${FILE}"; fi
 
-    _loaded_block="$(curl -fsL ${URL})";
+    _loaded_block="$(curl -fsL ${URL}?$(date +%s))";
 }
 
 
