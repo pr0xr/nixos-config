@@ -1,5 +1,7 @@
 #!/bin/bash
 
+_defaultvalue FILESYSTEM_TYPE ext4
+
 [ ! -f "${0}" ] && echo "Don't run this directly from curl. Save to file first." && exit
 [ -e "${POSTSCRIPT}" ] && INCHROOT=true || INCHROOT=false
 
