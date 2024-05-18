@@ -31,7 +31,10 @@ _loadblock () {
 for _block in $@; do
 	_preload;
 	echo "EXECUTING BLOCK \"$_block\""
+
+    set -x
 	[ -n "$_loaded_block" ] && eval "${_loaded_block}";
+    set +x
      		
 		while [ "$?" -gt 0 ]; do
             if [[ ! -z "$ERROR_EMAIL" ]]; then
@@ -40,10 +43,10 @@ for _block in $@; do
                 TEXT="${HOSTNAME} report errors in $_block when installing."
                 _mailgun
                 unset EMAIL
-                _anykey "EXECUTION OF BLOCK \"$_block\" EXPERIENCED ERRORS"
+                _anykey "BLOCK \"$_block\" EXPERIENCED ERRORS"
                 read -p "Enter block or 'shell' for an interactive session: " _block;
             else
-                _anykey "EXECUTION OF BLOCK \"$_block\" EXPERIENCED ERRORS" 
+                _anykey "BLOCK \"$_block\" EXPERIENCED ERRORS" 
                 read -p "Enter block or 'shell' for an interactive session: " _block;
             fi
 			_preload;
