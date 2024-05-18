@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _defaultvalue FILESYSTEM_TYPE ext4
-_defaultvalue FILESYSTEM pre/filesystem
+_defaultvalue FILESYSTEM preinstall/filesystem
 _defaultvalue INSTALL_DRIVE /dev/sda
 
 [ ! -f "${0}" ] && echo "Don't run this directly from curl. Save to file first." && exit
