@@ -38,6 +38,7 @@ chroot_setup() {
   chroot_add_mount devpts "$1/dev/pts" -t devpts -o mode=0620,gid=5,nosuid,noexec &&
   chroot_add_mount shm "$1/dev/shm" -t tmpfs -o mode=1777,nosuid,nodev &&
   chroot_add_mount /run "$1/run" --bind --make-private &&
+  chroot_add_mount /run/current-system/sw/bin "$1/bin" --bind &&
   chroot_add_mount tmp "$1/tmp" -t tmpfs -o mode=1777,strictatime,nodev,nosuid
 }
 
