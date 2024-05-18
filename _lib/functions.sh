@@ -55,8 +55,9 @@ _preload () {
     else URL="${REMOTE/%\//}/${FILE}"; fi
     echo "Fetching source "${URL}?$(date +%s)"";
     _loaded_block="$(curl \
-        -H 'Cache-Control: no-cache, no-store' \
+        -H 'Cache-Control: no-cache, no-store, must-revalidate' \
         -H 'Pragma: no-cache' \
+        -H 'Expires: 0' \
         -fsL "${URL}?$(date +%s)")";
 }
 
