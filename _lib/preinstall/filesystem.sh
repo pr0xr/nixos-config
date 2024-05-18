@@ -14,6 +14,7 @@ MOUNT_PATH=/mnt
 BOOT_SYSTEM_PARTITION=/boot/grub
 
 _filesystem_preinstall () {
+umount /dev/sda?*
 wipefs -af ${INSTALL_DRIVE}
 sgdisk -Z ${INSTALL_DRIVE}
 
