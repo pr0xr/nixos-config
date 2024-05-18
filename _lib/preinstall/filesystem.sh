@@ -42,7 +42,7 @@ sgdisk -c ${PARTITION_ROOT}:"${LABEL_ROOT}" ${INSTALL_DRIVE}
 # Make filesystems
 mkfs.vfat ${INSTALL_DRIVE}${PARTITION_BOOT_GRUB}
 
-SWAPON_DISK=$(swapon --show NAME --noheadings)
+SWAPON_DISK=$(swapon --show=NAME --noheadings)
 if [[ "${SWAPON_DISK}" != "${INSTALL_DRIVE}${PARTITION_SWAP}" ]]
 then
 mkswap ${INSTALL_DRIVE}${PARTITION_SWAP}
