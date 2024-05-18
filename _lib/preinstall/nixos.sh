@@ -10,3 +10,5 @@ sed --in-place '/system\.stateVersion = .*/a \
     services.openssh.settings.PermitRootLogin = \"yes\";\n \
     users.users.root.initialPassword = \"root\";\n \
 ' /mnt/etc/nixos/configuration.nix;
+
+nixos-install --no-root-passwd
