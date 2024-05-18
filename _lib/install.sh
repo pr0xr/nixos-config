@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -o errexit
+set -o errexit -x
 
 _defaultvalue REMOTE http://raw.github.com/oxypwn/nixos-config/master
 _defaultvalue FILESYSTEM_TYPE ext4
