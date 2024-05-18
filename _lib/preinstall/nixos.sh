@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+_defaultvalue NIXOS_CONFIG https://github.com/oxypwn/nixos-config/archive/refs/heads/main.tar.gz
 
 _nixos_pre () {
     nixos-generate-config --root /mnt;
@@ -16,5 +17,5 @@ _nixos_pre () {
 }
 
 #_nixos_post () {
-
+    
 #}
