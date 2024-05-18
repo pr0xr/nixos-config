@@ -54,7 +54,10 @@ _preload () {
     elif [ -f "${DIR/%\//}/${FILE}" ]; then URL="file://${FILE}";
     else URL="${REMOTE/%\//}/${FILE}"; fi
     echo "Fetching source "${URL}?$(date +%s)"";
-    _loaded_block="$(curl -fsL "${URL}?$(date +%s)")";
+    _loaded_block="$(curl \
+        -H 'Cache-Control: no-cache, no-store' \
+        -H 'Pragma: no-cache' \
+        -fsL "${URL}?$(date +%s)")";
 }
 
 
