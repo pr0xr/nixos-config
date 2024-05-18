@@ -2,7 +2,7 @@
 
 set -o errexit
 
-_defaultvalue REMOTE http://raw.github.com/oxypwn/nixos-config/master/_lib
+_defaultvalue REMOTE http://raw.github.com/oxypwn/nixos-config/master
 _defaultvalue FILESYSTEM_TYPE ext4
 _defaultvalue FILESYSTEM _lib/preinstall/filesystem
 _defaultvalue INSTALL_DRIVE /dev/sda
