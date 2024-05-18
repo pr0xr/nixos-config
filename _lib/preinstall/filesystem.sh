@@ -42,8 +42,12 @@ sgdisk -c ${PARTITION_ROOT}:"${LABEL_ROOT}" ${INSTALL_DRIVE}
 
 # Make filesystems
 mkfs.vfat ${INSTALL_DRIVE}${PARTITION_BOOT_GRUB}
-mkswap ${INSTALL_DRIVE}${PARTITION_SWAP} || true
+
+SWAPON_DISK=$(swapon --show NAME --noheadings)
+if [! ${SWAPON_DISK} == ${INSTALL_DRIVE}${PARTITION_SWAP} ]; then
+mkswap ${INSTALL_DRIVE}${PARTITION_SWAP}
 swapon ${INSTALL_DRIVE}${PARTITION_SWAP}
+fi
 mkfs.${FILESYSTEM_TYPE} ${INSTALL_DRIVE}${PARTITION_ROOT}
 
 # Mount
