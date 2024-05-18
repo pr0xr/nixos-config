@@ -26,9 +26,9 @@ _loadblock "${CHROOTPLZ}"
 _chroot_postscript
 fi
 
-if $INCHROOT; then
+#if $INCHROOT; then
 #_cleanupChroot
-fi
+#fi
 
 if ! $INCHROOT; then
 _postChroot
