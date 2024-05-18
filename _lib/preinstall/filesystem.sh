@@ -15,6 +15,8 @@ MOUNT_PATH=/mnt
 BOOT_SYSTEM_PARTITION=/boot/grub
 
 _filesystem_preinstall () {
+wipefs -af ${INSTALL_DRIVE}
+
 # Prepare system disk
 sgdisk -Z ${INSTALL_DRIVE} # DELETE install drive
 sgdisk -a 2048 -o ${INSTALL_DRIVE} # CREATING 2048 alignment
