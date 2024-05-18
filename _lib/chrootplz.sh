@@ -199,7 +199,7 @@ arch-chroot() {
   SHELL=/bin/sh $pid_unshare chroot "${chroot_args[@]}" -- "$chrootdir" "${args[@]}"
 }
 
-if [ -n "$ENABLE_CLI" ]
+if [[ -v "$ENABLE_CLI" ]]
 then
 while getopts ':hNu:r' flag; do
   case $flag in
