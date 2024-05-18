@@ -26,7 +26,8 @@ _chroot_postscript () {
 echo -e "#!/bin/bash\nINSTALL_DRIVE=$INSTALL_DRIVE" > "${MNT}${POSTSCRIPT}";
 grep -v "^\s*INSTALL_DRIVE.*" "${0}" >> "${MNT}${POSTSCRIPT}";
 echo -e 'export PS1="(chroot) $PS1"' >> "${MNT}${POSTSCRIPT}";
-#cp "${0}" "${MNT}${POSTSCRIPT}";
+
+cat ${MNT}${POSTSCRIPT}
 chmod a+x "${MNT}${POSTSCRIPT}"; arch-chroot "${MNT}" "${POSTSCRIPT}";
 }
 
