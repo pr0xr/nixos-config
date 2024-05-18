@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -x
 
 BOOT_DRIVE=$INSTALL_DRIVE
 AMOUNT_SWAP=1
@@ -58,4 +57,3 @@ mkdir -p ${MOUNT_PATH}${BOOT_SYSTEM_PARTITION}
 mount -t vfat ${INSTALL_DRIVE}${PARTITION_BOOT_GRUB} ${MOUNT_PATH}${BOOT_SYSTEM_PARTITION}
 }
 
-set +x
