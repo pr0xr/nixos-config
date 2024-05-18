@@ -16,6 +16,7 @@ BOOT_SYSTEM_PARTITION=/boot/grub
 
 _filesystem_preinstall () {
 wipefs -af ${INSTALL_DRIVE}
+sgdisk -Z ${INSTALL_DRIVE}
 
 # Prepare system disk
 sgdisk -Z ${INSTALL_DRIVE} # DELETE install drive
