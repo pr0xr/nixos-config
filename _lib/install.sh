@@ -5,6 +5,7 @@ _defaultvalue FILESYSTEM _lib/preinstall/filesystem
 _defaultvalue INSTALL_DRIVE /dev/sda
 
 [ ! -f "${0}" ] && echo "Don't run this directly from curl. Save to file first." && exit
+MNT=/mnt; TMP=/tmp/archblocks; POSTSCRIPT="/postinstall.sh"
 [ -e "${POSTSCRIPT}" ] && INCHROOT=true || INCHROOT=false
 
 if ! $INCHROOT; then
