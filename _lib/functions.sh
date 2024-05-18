@@ -32,9 +32,7 @@ for _block in $@; do
 	_preload;
 	echo "EXECUTING BLOCK \"$_block\""
 
-    set -x
 	[ -n "$_loaded_block" ] && eval "${_loaded_block}";
-    set +x
      		
 		while [ "$?" -gt 0 ]; do
             if [[ ! -z "$ERROR_EMAIL" ]]; then
