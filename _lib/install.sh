@@ -9,6 +9,7 @@ _defaultvalue INSTALL_DRIVE /dev/sda
 _defaultvalue NIXOS _lib/preinstall/nixos
 _defaultvalue FSTAB _lib/preinstall/fstab
 _defaultvalue CHROOTPLZ _lib/chrootplz
+_defaultvalue CHROOT /mnt
 
 
 [ ! -f "${0}" ] && echo "Don't run this directly from curl. Save to file first." && exit

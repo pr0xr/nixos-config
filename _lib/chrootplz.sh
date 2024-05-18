@@ -199,7 +199,8 @@ arch-chroot() {
   SHELL=/bin/bash $pid_unshare chroot "${chroot_args[@]}" -- "$chrootdir" "${args[@]}"
 }
 
-_getopts() {
+if ENABLE_CLI
+then
 while getopts ':hNu:r' flag; do
   case $flag in
     h)
@@ -224,13 +225,17 @@ while getopts ':hNu:r' flag; do
   esac
 done
 shift $(( OPTIND - 1 ))
-}
+
+args=("$@")
 
 (( $# )) || die 'No chroot directory specified'
 chrootdir=$1
 shift
 
-args=("$@")
+else
+chrootdir=$CHROOT
+fi
+
 if (( unshare )); then
   setup=unshare_setup
   $mount_unshare bash -c "$(declare_all); arch-chroot"
