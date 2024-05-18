@@ -1,3 +1,4 @@
+#!/bin/bash
 
 _anykey () {
 # Provide an alert (with optional custom preliminary message) and pause.
