@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o errexit
+
 _defaultvalue FILESYSTEM_TYPE ext4
 _defaultvalue FILESYSTEM _lib/preinstall/filesystem
 _defaultvalue INSTALL_DRIVE /dev/sda
