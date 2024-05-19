@@ -80,7 +80,7 @@
       user   = "oxy";
     };
 
-     nixosConfigurations.vm-intel = mkSystem "vm-amd" rec {
+     nixosConfigurations.vm-amd = mkSystem "vm-amd" rec {
       system = "x86_64-linux";
       user   = "oxy";
     };
