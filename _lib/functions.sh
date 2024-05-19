@@ -23,7 +23,7 @@ echo -e "\n$@"; read -sn 1 -p "Any key to continue..."; echo;
 
 _chroot_postscript () {
 # handle interactively assigned install drive value
-echo -e "#!/bin/bash\nINSTALL_DRIVE=$INSTALL_DRIVE" > "${MNT}${POSTSCRIPT}";
+echo -e "#!/usr/bin/env bash\nINSTALL_DRIVE=$INSTALL_DRIVE" > "${MNT}${POSTSCRIPT}";
 grep -v "^\s*INSTALL_DRIVE.*" "${0}" >> "${MNT}${POSTSCRIPT}";
 echo -e 'export PS1="(chroot) $PS1"' >> "${MNT}${POSTSCRIPT}";
 
