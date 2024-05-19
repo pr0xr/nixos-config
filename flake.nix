@@ -77,7 +77,7 @@
 
     nixosConfigurations.vm-intel = mkSystem "vm-intel" rec {
       system = "x86_64-linux";
-      user   = "mitchellh";
+      user   = "oxy";
     };
 
      nixosConfigurations.vm-intel = mkSystem "vm-amd" rec {

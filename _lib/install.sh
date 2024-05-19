@@ -28,10 +28,11 @@ _nixos_pre
 _chroot_postscript
 fi
 
-#if $INCHROOT; then
-#_cleanupChroot
-#fi
+if $INCHROOT; then
+_nixos_post
+_cleanupChroot
+fi
 
-#if ! $INCHROOT; then
-#_postChroot
-#fi
+if ! $INCHROOT; then
+_postChroot
+fi
