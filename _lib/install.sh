@@ -29,6 +29,7 @@ _chroot_postscript
 fi
 
 if $INCHROOT; then
+_loadblock "${NIXOS}"
 _nixos_post
 _cleanupChroot
 fi
