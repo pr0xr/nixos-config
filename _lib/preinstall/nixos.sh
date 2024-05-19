@@ -16,6 +16,6 @@ _nixos_pre () {
     nixos-install --no-root-passwd
 }
 
-#_nixos_post () {
-    
-#}
+_nixos_post () {
+nixos-enter -c $"POSTSCRIPT"    
+}
