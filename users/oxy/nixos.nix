@@ -12,7 +12,7 @@
 
   users.users.oxy = {
     isNormalUser = true;
-    home = "/home/mitchellh";
+    home = "/home/oxy";
     extraGroups = [ "docker" "wheel" ];
     shell = pkgs.fish;
     hashedPassword = "$y$j9T$jAnSQQZJae.WiRMdStvV01$xv4FYyi0Um7PBT3eWrkSN0hsmMOq2vWgGPO2pYan6f3";
