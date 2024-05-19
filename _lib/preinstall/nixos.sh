@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 _defaultvalue NIXOS_CONFIG https://github.com/oxypwn/nixos-config/archive/refs/heads/main.tar.gz
-_defaultvalue NIXNAME vm-amd
+_defaultvalue NIXNAME vm-intel
 
 _nixos_pre () {
     nixos-generate-config --root /mnt;
