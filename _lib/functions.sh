@@ -29,9 +29,9 @@ echo -e 'export PS1="(chroot) $PS1"' >> "${MNT}${POSTSCRIPT}";
 
 cp ${MNT}${POSTSCRIPT} /tmp
 
-mount --bind /run/current-system/sw/bin /mnt/bin
+#mount --bind /run/current-system/sw/bin /mnt/bin
 
-chmod a+x "${MNT}${POSTSCRIPT}"; arch-chroot "${MNT}" "${POSTSCRIPT}";
+chmod a+x "${MNT}${POSTSCRIPT}"; nixos-enter -c "${POSTSCRIPT}";
 }
 
 _display_postinstall_messages () {
