@@ -20,5 +20,5 @@ _nixos_pre () {
 _nixos_post () {
     cd $HOME \
         && mkdir /nixos-config && bash -c 'curl -LSs https://api.github.com/repos/oxypwn/nixos-config/tarball | tar xvzf - -C /nixos-config --strip-components=1'
-    bash -c 'NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake \"/nixos-config#${NIXNAME}\"'
+    NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake "/nixos-config#${NIXNAME}"
 }
