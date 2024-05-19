@@ -24,7 +24,7 @@ _filesystem_fstab
 _loadblock "${NIXOS}"
 _nixos_pre
 #_nixos_post
-_loadblock "${CHROOTPLZ}"
+#_loadblock "${CHROOTPLZ}"
 _chroot_postscript
 fi
 
