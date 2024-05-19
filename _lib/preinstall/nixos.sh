@@ -17,5 +17,5 @@ _nixos_pre () {
 }
 
 _nixos_post () {
-nixos-enter -c $"POSTSCRIPT"    
+nixos-enter -c "${POSTSCRIPT}"    
 }
