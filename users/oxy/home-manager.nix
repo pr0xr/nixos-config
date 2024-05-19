@@ -285,7 +285,7 @@ in {
       customVim.nvim-lspconfig
       customVim.nvim-plenary # required for telescope
       customVim.nvim-telescope
-      customVim.nvim-treesitter.withAllGrammars
+      customVim.nvim-treesitter
       customVim.nvim-treesitter-playground
       customVim.nvim-treesitter-textobjects
 

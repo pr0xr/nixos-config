@@ -115,7 +115,7 @@ let sources = import ../../nix/sources.nix; in rec {
 
     nvim-treesitter = vimUtils.buildVimPlugin {
       name = "nvim-treesitter";
-      src = inputs.nvim-treesitter;
+      src = inputs.nvim-treesitter.withAllGrammars;
     };
 
     nvim-treesitter-playground = vimUtils.buildVimPlugin {
