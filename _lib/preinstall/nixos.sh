@@ -19,6 +19,6 @@ _nixos_pre () {
 
 _nixos_post () {
     cd $HOME \
-        && bash -c 'curl -fsL https://github.com/oxypwn/nixos-config/archive/refs/heads/main.tar.gz | tar xvz - -C /nixos-config'
+        && bash -c 'curl -LSs https://api.github.com/repos/oxypwn/nixos-config/tarball | tar xvzf - -C /nixos-config'
     NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake \"/nix-config#${NIXNAME}\"
 }
