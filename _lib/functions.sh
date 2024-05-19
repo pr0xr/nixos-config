@@ -31,7 +31,9 @@ cp ${MNT}${POSTSCRIPT} /tmp
 
 #mount --bind /run/current-system/sw/bin /mnt/bin
 
-chmod a+x "${MNT}${POSTSCRIPT}"; nixos-enter -c "${MNT}${POSTSCRIPT}";
+#chmod a+x "${MNT}${POSTSCRIPT}"; nixos-enter -c "${MNT}${POSTSCRIPT}";
+chmod a+x "${MNT}${POSTSCRIPT}"; nixos-enter;
+
 }
 
 _display_postinstall_messages () {
