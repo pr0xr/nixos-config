@@ -199,7 +199,7 @@ arch-chroot() {
   if [[ -n $CHROOTPLZ ]]
   then
     chroot "$chrootdir" /nix/var/nix/profiles/system/activate
-    chroot "$chrootdir" /run/current-system/sw/bin/bash "${args[@]}"
+    #chroot "$chrootdir" /run/current-system/sw/bin/bash "${args[@]}"
   else
     SHELL=/bin/sh $pid_unshare chroot "${chroot_args[@]}" -- "$chrootdir" "${args[@]}"
   fi

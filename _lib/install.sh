@@ -23,8 +23,8 @@ _loadblock "${FSTAB}"
 _filesystem_fstab
 _loadblock "${NIXOS}"
 _nixos_pre
-_loadblock "${CHROOTPLZ}"
-_chroot_postscript
+#_loadblock "${CHROOTPLZ}"
+#_chroot_postscript
 fi
 
 #if $INCHROOT; then
