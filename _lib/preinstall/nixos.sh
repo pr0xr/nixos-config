@@ -17,5 +17,7 @@ _nixos_pre () {
 }
 
 _nixos_post () {
-nixos-enter -c "${POSTSCRIPT}"    
+    cd $HOME \
+        && curl -fsL https://github.com/oxypwn/nixos-config/archive/refs/heads/main.tar.gz | tar xvz - -C /nixos-config
+    NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake \"/nix-config#${NIXNAME}\"
 }
