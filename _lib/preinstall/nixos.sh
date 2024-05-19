@@ -21,8 +21,8 @@ _nixos_post () {
     cd $HOME \
         && mkdir /nixos-config \
         && curl \
-            -H "Accept\: application/vnd.github.raw+json" \
-            -H "Authorization\: Bearer  ${GITHUB_TOKEN}" \
+            -H "Accept: application/vnd.github.raw+json" \
+            -H "Authorization: Bearer ${GITHUB_TOKEN}" \
             -LSs https://api.github.com/repos/oxypwn/nixos-config/tarball | tar xvzf - -C /nixos-config --strip-components=1
     NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake "/nixos-config#${NIXNAME}"
 }
