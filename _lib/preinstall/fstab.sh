@@ -6,7 +6,7 @@ LABEL_BIOS_GPT=biosgpt
 LABEL_BOOT_GRUB=bootgrub
 LABEL_SWAP=swap
 LABEL_ROOT=root
-BOOT_SYSTEM_PARTITION=/boot/grub
+BOOT_SYSTEM_PARTITION=/boot
 
 _filesystem_fstab ()
 {
