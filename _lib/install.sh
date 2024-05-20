@@ -19,8 +19,8 @@ MNT=/mnt; TMP=/tmp/archblocks; POSTSCRIPT="/postinstall.sh"
 if ! $INCHROOT; then
 _loadblock "${FILESYSTEM}"
 _filesystem_preinstall
-_loadblock "${FSTAB}"
-_filesystem_fstab
+#_loadblock "${FSTAB}"
+#_filesystem_fstab
 _loadblock "${NIXOS}"
 _nixos_pre
 #_nixos_post
