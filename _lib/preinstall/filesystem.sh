@@ -16,26 +16,29 @@ BOOT_SYSTEM_PARTITION=/boot/grub
 _filesystem_preinstall () {
 umount /dev/sda?* || true
 wipefs -af ${INSTALL_DRIVE}
-sgdisk -Z ${INSTALL_DRIVE}
 
 # Prepare system disk
 sgdisk -Z ${INSTALL_DRIVE} # DELETE install drive
 sgdisk -a 2048 -o ${INSTALL_DRIVE} # CREATING 2048 alignment
 
 # Create system partitions
-sgdisk -n ${PARTITION_BIOS_GPT}:0:+2M ${INSTALL_DRIVE} # BIOS GPT needs 2MB
-sgdisk -n ${PARTITION_BOOT_GRUB}:0:+200M ${INSTALL_DRIVE} # BOOT partition
+#sgdisk -n ${PARTITION_BIOS_GPT}:0:+2M ${INSTALL_DRIVE} # BIOS GPT needs 2MB
+#sgdisk -n ${PARTITION_BOOT_GRUB}:0:+200M ${INSTALL_DRIVE} # BOOT partition
+sgdisk -n ${PARTITION_BOOT_GRUB}:0:+512M ${INSTALL_DRIVE} # BOOT partition
+
 sgdisk -n ${PARTITION_SWAP}:0:+${AMOUNT_SWAP}G ${INSTALL_DRIVE} # SWAP partititon
 sgdisk -n ${PARTITION_ROOT}:0:0 ${INSTALL_DRIVE} # ROOT partition
 
 # Set partition types
-sgdisk -t ${PARTITION_BIOS_GPT}:ef00 ${INSTALL_DRIVE}
-sgdisk -t ${PARTITION_BOOT_GRUB}:8300 ${INSTALL_DRIVE}
+#sgdisk -t ${PARTITION_BIOS_GPT}:ef02 ${INSTALL_DRIVE}
+#sgdisk -t ${PARTITION_BOOT_GRUB}:8300 ${INSTALL_DRIVE}
+sgdisk -t ${PARTITION_BOOT_GRUB}:ef00 ${INSTALL_DRIVE}
+
 sgdisk -t ${PARTITION_SWAP}:8200 ${INSTALL_DRIVE}
 sgdisk -t ${PARTITION_ROOT}:8300 ${INSTALL_DRIVE}
 
 # Label partitions
-sgdisk -c ${PARTITION_BIOS_GPT}:"${LABEL_BIOS_GPT}" ${INSTALL_DRIVE}
+#sgdisk -c ${PARTITION_BIOS_GPT}:"${LABEL_BIOS_GPT}" ${INSTALL_DRIVE}
 sgdisk -c ${PARTITION_BOOT_GRUB}:"${LABEL_BOOT_GRUB}" ${INSTALL_DRIVE}
 sgdisk -c ${PARTITION_SWAP}:"${LABEL_SWAP}" ${INSTALL_DRIVE}
 sgdisk -c ${PARTITION_ROOT}:"${LABEL_ROOT}" ${INSTALL_DRIVE}
