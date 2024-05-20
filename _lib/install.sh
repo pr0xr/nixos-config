@@ -31,9 +31,7 @@ fi
 if $INCHROOT; then
 _loadblock "${NIXOS}"
 _nixos_post
-_cleanupChroot
+_cleanup_chroot
+_exit_and_reboot
 fi
 
-if ! $INCHROOT; then
-_postChroot
-fi

@@ -27,7 +27,7 @@ _build_postscript () {
     grep -v "^\s*INSTALL_DRIVE.*" "${0}" >> "${MNT}${POSTSCRIPT}";
     chmod a+x "${MNT}${POSTSCRIPT}";
 
-    [ $ENTER_CHROOT ] && nixos-enter -c "${POSTSCRIPT}";
+    [ $NIXOS_ENTER ] && nixos-enter -c "${POSTSCRIPT}" || _exit_and_reboot;
 }
 
 _display_postinstall_messages () {
@@ -106,7 +106,7 @@ curl -s \
     https://api.pushover.net/1/messages.json
 }
 
-_cleanupChroot () {
+_cleanup_chroot () {
 
     if [[ ! -z "$API_KEY_APP_PUSHOVER" && ! -z "$API_KEY_USER_PUSHOVER" ]]; then
         MESSAGE="${HOSTNAME} was successfully installed."
@@ -118,11 +118,6 @@ _cleanupChroot () {
 
 }
 
-_postChroot () {
-    if [[ ! -z "$POST_CHROOT" ]]; then
-        _loadblock "$POST_CHROOT"
-    else
-        eject && reboot || reboot
-        echo "postChroot"
-    fi
+_exit_and_reboot () {
+    eject && reboot || reboot
 }
