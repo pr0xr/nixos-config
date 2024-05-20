@@ -20,7 +20,7 @@ _nixos_pre () {
 _nixos_post () {
     #mkdir -p /boot/EFI/{systemd,BOOT}
     cd $HOME \
-        && mkdir /nixos-config \
+        && mkdir -p /nixos-config \
         && curl \
             -H "Accept: application/vnd.github.raw+json" \
             -H "Authorization: Bearer ${GITHUB_TOKEN}" \
