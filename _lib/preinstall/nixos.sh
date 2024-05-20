@@ -18,12 +18,12 @@ _nixos_pre () {
 }
 
 _nixos_post () {
-    mkdir -p /boot/EFI/{systemd,BOOT}
+    #mkdir -p /boot/EFI/{systemd,BOOT}
     cd $HOME \
         && mkdir /nixos-config \
         && curl \
             -H "Accept: application/vnd.github.raw+json" \
             -H "Authorization: Bearer ${GITHUB_TOKEN}" \
             -LSs https://api.github.com/repos/oxypwn/nixos-config/tarball | tar xvzf - -C /nixos-config --strip-components=1
-    NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake "/nixos-config#${NIXNAME}" --show-trace
+    NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 NIXOS_INSTALL_BOOTLOADER=1 nixos-rebuild switch --flake "/nixos-config#${NIXNAME}" --show-trace
 }
