@@ -32,7 +32,7 @@ in {
     "mupdf-1.17.0"
   ];
 
-  #boot.loader.efi.efiSysMountPoint = "/boot/EFI";
+  boot.loader.efi.efiSysMountPoint = "/boot/EFI";
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
