@@ -25,7 +25,7 @@ _loadblock "${NIXOS}"
 _nixos_pre
 #_nixos_post
 #_loadblock "${CHROOTPLZ}"
-_chroot_postscript
+_build_postscript
 fi
 
 if $INCHROOT; then

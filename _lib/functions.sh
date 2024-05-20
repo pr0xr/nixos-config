@@ -21,15 +21,13 @@ _anykey () {
 echo -e "\n$@"; read -sn 1 -p "Any key to continue..."; echo;
 }
 
-_chroot_postscript () {
-# handle interactively assigned install drive value
-echo -e "#!/usr/bin/env bash\nINSTALL_DRIVE=$INSTALL_DRIVE" > "${MNT}${POSTSCRIPT}";
-echo -e 'export PS1="(chroot) $PS1"' >> "${MNT}${POSTSCRIPT}";
-echo -e 'mkdir /run/dbus && dbus-daemon --system --fork' >> "${MNT}${POSTSCRIPT}"
-grep -v "^\s*INSTALL_DRIVE.*" "${0}" >> "${MNT}${POSTSCRIPT}";
+_build_postscript () {
+    # handle interactively assigned install drive value
+    echo -e "#!/usr/bin/env bash\nINSTALL_DRIVE=$INSTALL_DRIVE" > "${MNT}${POSTSCRIPT}";
+    grep -v "^\s*INSTALL_DRIVE.*" "${0}" >> "${MNT}${POSTSCRIPT}";
+    chmod a+x "${MNT}${POSTSCRIPT}";
 
-chmod a+x "${MNT}${POSTSCRIPT}"; nixos-enter -c "${POSTSCRIPT}";
-
+    [ $ENTER_CHROOT ] && nixos-enter -c "${POSTSCRIPT}";
 }
 
 _display_postinstall_messages () {
