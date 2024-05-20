@@ -18,6 +18,7 @@ _nixos_pre () {
 }
 
 _nixos_post () {
+    mkdir -p /boot/EFI/{systemd,BOOT}
     cd $HOME \
         && mkdir /nixos-config \
         && curl \
