@@ -140,7 +140,7 @@ let sources = import ../../nix/sources.nix; in rec {
     #nvim-treesitter-textobjects = vimUtils.buildVimPlugin {
     #  name = "nvim-treesitter-textobjects";
     #  src = sources.nvim-treesitter-textobjects;
-    }#;
+    #};
   };
 
   #tree-sitter-proto = self.callPackage
