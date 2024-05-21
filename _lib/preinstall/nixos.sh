@@ -29,5 +29,5 @@ _nixos_post () {
     else
         curl -LSs https://api.github.com/repos/oxypwn/nixos-config/tarball | tar xvzf - -C /nixos-config --strip-components=1
     fi
-    NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 NIXOS_INSTALL_BOOTLOADER=1 nixos-rebuild switch --flake "/nixos-config#${NIXNAME}" --show-trace
+    NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake "/nixos-config#${NIXNAME}" --show-trace
 }
