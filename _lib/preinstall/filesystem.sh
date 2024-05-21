@@ -59,3 +59,18 @@ mkdir -p ${MOUNT_PATH}${BOOT_SYSTEM_PARTITION}
 mount -t vfat -o umask=0077 ${INSTALL_DRIVE}${PARTITION_BOOT} ${MOUNT_PATH}${BOOT_SYSTEM_PARTITION}
 }
 
+_filesystem_nixos() {
+    parted /dev/sda -- mklabel gpt
+    parted /dev/sda -- mkpart primary 512MB -8GB
+    parted /dev/sda -- mkpart primary linux-swap -8GB 100\%
+    parted /dev/sda -- mkpart ESP fat32 1MB 512MB
+    parted /dev/sda -- set 3 esp on
+    sleep 1
+    mkfs.ext4 -L nixos /dev/sda1
+    mkswap -L swap /dev/sda2
+    mkfs.fat -F 32 -n boot /dev/sda3
+    sleep 1
+    mount /dev/disk/by-label/nixos /mnt
+    mkdir -p /mnt/boot
+    mount /dev/disk/by-label/boot /mnt/boot
+}
