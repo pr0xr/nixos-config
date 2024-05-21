@@ -10,6 +10,7 @@
   networking.interfaces.ens33.useDHCP = true;
 
   # Shared folder to host works on Intel
+  # THIS MUST EXIST to be able to boot into the system.
   fileSystems."/host" = {
     fsType = "fuse./run/current-system/sw/bin/vmhgfs-fuse";
     device = ".host:/";
