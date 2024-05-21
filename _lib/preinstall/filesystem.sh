@@ -24,7 +24,7 @@ sgdisk -a 2048 -o ${INSTALL_DRIVE} # CREATING 2048 alignment
 # Create system partitions
 #sgdisk -n ${PARTITION_BIOS_GPT}:0:+2M ${INSTALL_DRIVE} # BIOS partition GPT needs 2MB
 #sgdisk -n ${PARTITION_BOOT}:0:+200M ${INSTALL_DRIVE} # BOOT partition
-sgdisk -n ${PARTITION_BOOT}:0:+550M ${INSTALL_DRIVE} # BOOT partition
+sgdisk -n ${PARTITION_BOOT}:+2M:+550M ${INSTALL_DRIVE} # BOOT partition
 sgdisk -n ${PARTITION_SWAP}:0:+${AMOUNT_SWAP}G ${INSTALL_DRIVE} # SWAP partititon
 sgdisk -n ${PARTITION_ROOT}:0:0 ${INSTALL_DRIVE} # ROOT partition
 
