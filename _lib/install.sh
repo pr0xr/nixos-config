@@ -32,7 +32,7 @@ fi
 if $INCHROOT; then
 _loadblock "${NIXOS}"
 _nixos_post
-_cleanup_chroot
-_exit_and_reboot
+#_cleanup_chroot
+#_exit_and_reboot
 fi
 
