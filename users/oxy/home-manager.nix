@@ -231,8 +231,8 @@ in {
         { key = "V"; mods = "Command"; action = "Paste"; }
         { key = "C"; mods = "Command"; action = "Copy"; }
         { key = "Key0"; mods = "Command"; action = "ResetFontSize"; }
-        { key = "Equals"; mods = "Command"; action = "IncreaseFontSize"; }
-        { key = "Subtract"; mods = "Command"; action = "DecreaseFontSize"; }
+        { key = "Key9"; mods = "Command"; action = "IncreaseFontSize"; }
+        { key = "Key8"; mods = "Command"; action = "DecreaseFontSize"; }
       ];
     };
   };
