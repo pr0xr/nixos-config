@@ -230,9 +230,9 @@ in {
         { key = "K"; mods = "Command"; chars = "ClearHistory"; }
         { key = "V"; mods = "Command"; action = "Paste"; }
         { key = "C"; mods = "Command"; action = "Copy"; }
-        { key = "Key0"; mods = "Command"; chars = "\u001b[48;5u"; action = "ResetFontSize"; }
-        { key = "Key9"; mods = "Command"; chars = "\u001b[57;5u"; action = "IncreaseFontSize"; }
-        { key = "Key8"; mods = "Command"; chars = "\u001b[56;5u"; action = "DecreaseFontSize"; }
+        { key = "Key0"; mods = "Command"; action = "ResetFontSize"; }
+        { key = "Key9"; mods = "Command"; action = "IncreaseFontSize"; }
+        { key = "Key8"; mods = "Command"; action = "DecreaseFontSize"; }
       ];
     };
   };
