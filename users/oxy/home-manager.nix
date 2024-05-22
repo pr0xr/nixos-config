@@ -230,9 +230,9 @@ in {
         { key = "K"; mods = "Alt"; chars = "ClearHistory"; }
         { key = "V"; mods = "Alt"; action = "Paste"; }
         { key = "C"; mods = "Alt"; action = "Copy"; }
-        { key = "0"; mods = "Alt"; action = "ResetFontSize"; }
-        { key = "9"; mods = "Alt"; action = "IncreaseFontSize"; }
-        { key = "8"; mods = "Alt"; action = "DecreaseFontSize"; }
+        { key = "Key0"; mods = "LAlt"; action = "ResetFontSize"; }
+        { key = "Key9"; mods = "LAlt"; action = "IncreaseFontSize"; }
+        { key = "Key8"; mods = "LAlt"; action = "DecreaseFontSize"; }
       ];
     };
   };
