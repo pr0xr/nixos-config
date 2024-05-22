@@ -80,13 +80,13 @@ in {
     "rofi/config.rasi".text = builtins.readFile ./rofi;
 
     # tree-sitter parsers
-    "nvim/parser/proto.so".source = "${pkgs.tree-sitter-proto}/parser";
-    "nvim/queries/proto/folds.scm".source =
-      "${sources.tree-sitter-proto}/queries/folds.scm";
-    "nvim/queries/proto/highlights.scm".source =
-      "${sources.tree-sitter-proto}/queries/highlights.scm";
-    "nvim/queries/proto/textobjects.scm".source =
-      ./textobjects.scm;
+    #"nvim/parser/proto.so".source = "${pkgs.tree-sitter-proto}/parser";
+    #"nvim/queries/proto/folds.scm".source =
+    #  "${sources.tree-sitter-proto}/queries/folds.scm";
+    #"nvim/queries/proto/highlights.scm".source =
+    #  "${sources.tree-sitter-proto}/queries/highlights.scm";
+    #"nvim/queries/proto/textobjects.scm".source =
+    #  ./textobjects.scm;
   } // (if isDarwin then {
     # Rectangle.app. This has to be imported manually using the app.
     "rectangle/RectangleConfig.json".text = builtins.readFile ./RectangleConfig.json;
