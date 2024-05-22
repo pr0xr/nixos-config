@@ -42,6 +42,7 @@ in {
 
     pkgs.gopls
     pkgs.zigpkgs."0.12.0"
+    pkgs.rust-bin.stable.latest.default
 
     # Node is required for Copilot.vim
     pkgs.nodejs
