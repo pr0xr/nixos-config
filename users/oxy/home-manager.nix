@@ -266,7 +266,7 @@ in {
     package = pkgs.neovim;
 
     withPython3 = true;
-
+    /*
     plugins = with pkgs; [
       customVim.vim-copilot
       customVim.vim-cue
@@ -309,6 +309,7 @@ in {
     ]);
 
     extraConfig = (import ./vim-config.nix) { inherit sources; };
+    */
   };
 
   services.gpg-agent = {
