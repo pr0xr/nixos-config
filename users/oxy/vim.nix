@@ -113,15 +113,15 @@ let sources = import ../../nix/sources.nix; in rec {
       buildPhase = ":";
     };
 
-    #nvim-treesitter = vimUtils.buildVimPlugin {
-    #  name = "nvim-treesitter";
-    #  src = inputs.nvim-treesitter.withAllGrammars;
-    #};
+    nvim-treesitter = vimUtils.buildVimPlugin {
+      name = "nvim-treesitter";
+      src = inputs.nvim-treesitter.withAllGrammars;
+    };
 
-    #nvim-treesitter-playground = vimUtils.buildVimPlugin {
-    #  name = "nvim-treesitter-playground";
-    #  src = sources.nvim-treesitter-playground;
-    #};
+    nvim-treesitter-playground = vimUtils.buildVimPlugin {
+      name = "nvim-treesitter-playground";
+      src = sources.nvim-treesitter-playground;
+    };
 
     nvim-lspconfig = vimUtils.buildVimPlugin {
       name = "nvim-lspconfig";
@@ -137,10 +137,10 @@ let sources = import ../../nix/sources.nix; in rec {
       src = sources.nvim-lspinstall;
     };
 
-    #nvim-treesitter-textobjects = vimUtils.buildVimPlugin {
-    #  name = "nvim-treesitter-textobjects";
-    #  src = sources.nvim-treesitter-textobjects;
-    #};
+    nvim-treesitter-textobjects = vimUtils.buildVimPlugin {
+      name = "nvim-treesitter-textobjects";
+      src = sources.nvim-treesitter-textobjects;
+    };
   };
 
   #tree-sitter-proto = self.callPackage
