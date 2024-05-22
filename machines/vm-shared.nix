@@ -81,7 +81,7 @@ in {
     displayManager.gdm.enable = true;
   } else {
     enable = true;
-    layout = "us";
+    layout = "se(dvorak_a5)";
     dpi = 220;
 
     desktopManager = {
