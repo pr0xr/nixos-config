@@ -39,6 +39,7 @@ in {
     pkgs.ripgrep
     pkgs.tree
     pkgs.watch
+    pkgs.neovim
 
     pkgs.gopls
     pkgs.zigpkgs."0.12.0"
@@ -262,14 +263,14 @@ in {
       "battery all".enable = false;
     };
   };
-
+  /*
   programs.neovim = {
     enable = false;
-    #package = pkgs.neovim-nightly;
+    package = pkgs.neovim-nightly;
     #package = pkgs.neovim;
 
-    #withPython3 = true;
-    /*
+    withPython3 = true;
+    
     plugins = with pkgs; [
       customVim.vim-copilot
       customVim.vim-cue
@@ -291,9 +292,9 @@ in {
       customVim.nvim-plenary # required for telescope
       customVim.nvim-telescope
       
-      #customVim.nvim-treesitter
-      #customVim.nvim-treesitter-playground
-      #customVim.nvim-treesitter-textobjects
+      customVim.nvim-treesitter
+      customVim.nvim-treesitter-playground
+      customVim.nvim-treesitter-textobjects
 
       vimPlugins.vim-airline
       vimPlugins.vim-airline-themes
@@ -312,8 +313,8 @@ in {
     ]);
 
     extraConfig = (import ./vim-config.nix) { inherit sources; };
-    */
   };
+  */
 
   services.gpg-agent = {
     enable = isLinux;
