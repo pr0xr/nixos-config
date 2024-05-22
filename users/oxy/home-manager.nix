@@ -262,7 +262,7 @@ in {
 
   programs.neovim = {
     enable = false;
-    #package = pkgs.neovim-nightly;
+    package = pkgs.neovim-nightly;
     package = pkgs.neovim;
 
     withPython3 = true;
