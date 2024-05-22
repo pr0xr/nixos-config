@@ -37,6 +37,7 @@
 
     # Other packages
     zig.url = "github:mitchellh/zig-overlay";
+    rust.url = "github:oxalica/rust-overlay";
 
     # Non-flakes
     nvim-cinnamon.url = "github:declancm/cinnamon.nvim";
@@ -54,6 +55,7 @@
     overlays = [
       inputs.neovim-nightly-overlay.overlay
       inputs.zig.overlays.default
+      inputs.rust.overlays.default
     ];
 
     mkSystem = import ./lib/mksystem.nix {
