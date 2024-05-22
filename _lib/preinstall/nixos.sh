@@ -6,6 +6,7 @@ _nixos_pre () {
     nixos-generate-config --root /mnt;
     sed --in-place '/system\.stateVersion = .*/a \
         nix.package = pkgs.nixUnstable;\n \
+        nixpkgs.config.allowUnfree = true;\n \
         nix.extraOptions = \"experimental-features = nix-command flakes\";\n \
         services.openssh.enable = true;\n \
         services.openssh.settings.PasswordAuthentication = true;\n \
@@ -31,5 +32,5 @@ _nixos_post () {
             curl -LSs https://api.github.com/repos/oxypwn/nixos-config/tarball | tar xvzf - -C /nixos-config --strip-components=1
         fi
     fi
-    NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 NIXPGKS_ALLOW_UNFREE=1 nixos-rebuild switch --flake "/nixos-config#${NIXNAME}" --show-trace
+    NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake "/nixos-config#${NIXNAME}" --show-trace
 }
