@@ -57,7 +57,7 @@ in {
     pkgs.valgrind
     pkgs.zathura
     pkgs.xfce.xfce4-terminal
-    pkgs.vscode
+    #pkgs.vscode
   ]);
 
   #---------------------------------------------------------------------
