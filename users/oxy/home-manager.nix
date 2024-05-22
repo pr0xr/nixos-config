@@ -227,12 +227,12 @@ in {
       env.TERM = "xterm-256color";
 
       key_bindings = [
-        { key = "K"; mods = "Command"; chars = "ClearHistory"; }
-        { key = "V"; mods = "Command"; action = "Paste"; }
-        { key = "C"; mods = "Command"; action = "Copy"; }
-        { key = "Key0"; mods = "Command"; action = "ResetFontSize"; }
-        { key = "Key9"; mods = "Command"; action = "IncreaseFontSize"; }
-        { key = "Key8"; mods = "Command"; action = "DecreaseFontSize"; }
+        { key = "K"; mods = "Alt"; chars = "ClearHistory"; }
+        { key = "V"; mods = "Alt"; action = "Paste"; }
+        { key = "C"; mods = "Alt"; action = "Copy"; }
+        { key = "0"; mods = "Alt"; action = "ResetFontSize"; }
+        { key = "9"; mods = "Alt"; action = "IncreaseFontSize"; }
+        { key = "8"; mods = "Alt"; action = "DecreaseFontSize"; }
       ];
     };
   };
