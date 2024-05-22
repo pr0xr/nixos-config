@@ -99,6 +99,8 @@ in {
   # Programs
   #---------------------------------------------------------------------
 
+  programs.home-manager.enable = true;
+
   programs.gpg.enable = !isDarwin;
 
   programs.bash = {
