@@ -266,9 +266,9 @@ in {
     };
   };
 
-  /*
+  
   programs.neovim = {
-    enable = false;
+    enable = true;
     package = pkgs.neovim-nightly;
     #package = pkgs.neovim;
 
@@ -317,7 +317,7 @@ in {
 
     extraConfig = (import ./vim-config.nix) { inherit sources; };
   };
-  */
+  
 
   services.gpg-agent = {
     enable = isLinux;
