@@ -41,6 +41,7 @@ in {
     pkgs.watch
     pkgs.vim
     pkgs.helix
+    #pkgs.ngrok
 
     pkgs.gopls
     pkgs.zigpkgs."0.12.0"
