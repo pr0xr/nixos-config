@@ -35,7 +35,7 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    niri = {
+    niri-nightly = {
       url = "github:YaLTeR/niri";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };

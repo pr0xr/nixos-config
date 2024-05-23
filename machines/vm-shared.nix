@@ -90,8 +90,7 @@ in {
     };
 
     displayManager = {
-      #defaultSession = "none+i3";
-      defaultSession = "none+niri";
+      defaultSession = "none+i3";
       lightdm.enable = true;
 
       # AARCH64: For now, on Apple Silicon, we must manually set the
@@ -102,8 +101,7 @@ in {
     };
 
     windowManager = {
-      #i3.enable = true;
-      niri.enable = true;
+      i3.enable = true;
     };
   };
 
