@@ -264,6 +264,12 @@ in {
       "battery all".enable = false;
     };
   };
+
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri;
+  };
+
   /*
   programs.neovim = {
     enable = false;
