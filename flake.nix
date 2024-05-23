@@ -35,13 +35,6 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };*/
 
-    neovim = {
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
-    helix = {
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
 
     # Other packages
     zig.url = "github:mitchellh/zig-overlay";
