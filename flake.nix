@@ -27,11 +27,19 @@
     # I think technically you're not supposed to override the nixpkgs
     # used by neovim but recently I had failures if I didn't pin to my
     # own. We can always try to remove that anytime.
-    neovim-nightly-overlay = {
+    /*neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
 
       # Only need unstable until the lpeg fix hits mainline, probably
       # not very long... can safely switch back for 23.11.
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };*/
+
+    neovim = {
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
+    helix = {
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
