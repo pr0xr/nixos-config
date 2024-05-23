@@ -265,11 +265,6 @@ in {
     };
   };
 
-  programs.niri = {
-    enable = true;
-    package = pkgs.niri-nightly;
-  };
-
   /*
   programs.neovim = {
     enable = false;

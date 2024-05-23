@@ -33,7 +33,6 @@ in {
   ];
 
   boot.initrd.systemd.emergencyAccess = config.user.users.oxy.hashedPassword;
-  #boot.loader.efi.efiSysMountPoint = "/boot";
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
