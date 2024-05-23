@@ -295,9 +295,9 @@ in {
       customVim.nvim-plenary # required for telescope
       customVim.nvim-telescope
       
-      #customVim.nvim-treesitter
-      #customVim.nvim-treesitter-playground
-      #customVim.nvim-treesitter-textobjects
+      customVim.nvim-treesitter
+      customVim.nvim-treesitter-playground
+      customVim.nvim-treesitter-textobjects
 
       vimPlugins.vim-airline
       vimPlugins.vim-airline-themes
