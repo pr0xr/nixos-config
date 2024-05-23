@@ -35,6 +35,10 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+    niri = {
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     # Other packages
     zig.url = "github:mitchellh/zig-overlay";
     rust.url = "github:oxalica/rust-overlay";
