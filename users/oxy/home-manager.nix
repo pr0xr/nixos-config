@@ -39,7 +39,7 @@ in {
     pkgs.ripgrep
     pkgs.tree
     pkgs.watch
-    pkgs.neovim
+    pkgs.vim
 
     pkgs.gopls
     pkgs.zigpkgs."0.12.0"
@@ -69,7 +69,8 @@ in {
     LANG = "en_US.UTF-8";
     LC_CTYPE = "en_US.UTF-8";
     LC_ALL = "en_US.UTF-8";
-    EDITOR = "nvim";
+    #EDITOR = "nvim";
+    EDITOR = "vim";
     PAGER = "less -FirSwX";
     MANPAGER = "${manpager}/bin/manpager";
   };
