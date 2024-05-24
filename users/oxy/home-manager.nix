@@ -181,7 +181,7 @@ in {
   programs.git = {
     enable = true;
     userName = "Paul Liljenberg";
-    userEmail = "liljenberg.paul@gmail.com";
+    userEmail = "paul@bangofbits.com";
     #signing = {
     #  key = "523D5DC389D273BC";
     #  signByDefault = true;
