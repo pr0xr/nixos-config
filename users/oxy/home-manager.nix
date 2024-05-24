@@ -42,7 +42,7 @@ in {
     pkgs.vim
     pkgs.helix
     #pkgs.ngrok
-    pkgs.mountpoint-s3
+    #pkgs.mountpoint-s3
     pkgs.awscli2
 
     pkgs.gopls
@@ -50,7 +50,7 @@ in {
     pkgs.rust-bin.stable.latest.default
 
     # Node is required for Copilot.vim
-    pkgs.nodejs
+    pkgs.nodejs  
   ] ++ (lib.optionals isDarwin [
     # This is automatically setup on Linux
     pkgs.cachix
@@ -271,7 +271,7 @@ in {
 
   
   programs.neovim = {
-    enable = true;
+    enable = false;
     package = pkgs.neovim;
     #package = pkgs.neovim;
 
