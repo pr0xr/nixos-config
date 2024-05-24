@@ -42,6 +42,8 @@ in {
     pkgs.vim
     pkgs.helix
     #pkgs.ngrok
+    pkgs.mountpoint-s3
+    pkgs.awscli2
 
     pkgs.gopls
     pkgs.zigpkgs."0.12.0"
