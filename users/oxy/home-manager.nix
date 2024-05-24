@@ -271,7 +271,7 @@ in {
 
   
   programs.neovim = {
-    enable = false;
+    enable = true;
     package = pkgs.neovim;
     #package = pkgs.neovim;
 
