@@ -271,9 +271,9 @@ in {
 
   
   programs.neovim = {
-    enable = false;
-    #package = pkgs.neovim;
-    package = pkgs.neovim-nightly;
+    enable = true;
+    package = pkgs.neovim;
+    #package = pkgs.neovim-nightly;
 
     withPython3 = true;
     
