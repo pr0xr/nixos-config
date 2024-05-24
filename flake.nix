@@ -54,7 +54,7 @@
   outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs: let
     # Overlays is the list of overlays we want to apply from flake inputs.
     overlays = [
-      inputs.neovim-nightly-overlay.overlay
+      inputs.neovim-nightly-overlay.overlays.default
       inputs.zig.overlays.default
       inputs.rust.overlays.default
     ];
