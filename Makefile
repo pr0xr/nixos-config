@@ -7,4 +7,4 @@ vm/bootstrap0:
 
 
 vm/switch:
-	nixos-rebuild switch --flake $HOME/source/nixos-config#vm-intel --show-trace
+	nixos-rebuild switch --flake ${HOME}/source/nixos-config#vm-intel --show-trace
