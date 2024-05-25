@@ -272,9 +272,10 @@ in {
   
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim;
+    #package = pkgs.neovim;
     #package = pkgs.neovim-nightly;
-
+    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+    
     withPython3 = true;
     
     plugins = with pkgs; [
