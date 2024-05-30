@@ -134,9 +134,9 @@ in {
     xclip
     (pkgs.buildFHSUserEnv {
         name = "fhs";
-        runScript = "bash";
+        runScript = "fish";
         targetPkgs = pkgs: with pkgs; [
-            rye
+            nixpkgs-unstable.rye
         ]; 
     })
     # For hypervisors that support auto-resizing, this script forces it.
