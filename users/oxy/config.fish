@@ -73,7 +73,7 @@ end
 
 # Add ~/.local/bin
 set -q PATH; or set PATH ''; set -gx PATH  "$HOME/.local/bin" $PATH;
-
+set -Ua fish_user_paths "$HOME/.rye/shims"
 #-------------------------------------------------------------------------------
 # Prompt
 #-------------------------------------------------------------------------------
