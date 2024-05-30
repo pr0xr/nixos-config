@@ -132,13 +132,7 @@ in {
     niv
     rxvt_unicode
     xclip
-    (pkgs.buildFHSUserEnv {
-        name = "fhs";
-        runScript = "fish";
-        targetPkgs = pkgs: with pkgs; [
-            nixpkgs-unstable.rye
-        ]; 
-    })
+
     # For hypervisors that support auto-resizing, this script forces it.
     # I've noticed not everyone listens to the udev events so this is a hack.
     (writeShellScriptBin "xrandr-auto" ''
