@@ -12,7 +12,7 @@ _nixos_pre () {
         services.openssh.settings.PasswordAuthentication = true;\n \
         services.openssh.settings.PermitRootLogin = \"yes\";\n \
         users.users.root.initialPassword = \"root\";\n \
-        #boot.loader.grub.device = \"/dev/sda\";\n \
+        boot.loader.grub.device = \"/dev/sda\";\n \
     ' /mnt/etc/nixos/configuration.nix;
 
     nixos-install --no-root-passwd
