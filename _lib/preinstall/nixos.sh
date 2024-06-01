@@ -5,7 +5,7 @@ _defaultvalue NIXNAME vm-intel
 _nixos_pre () {
     nixos-generate-config --root /mnt;
     sed --in-place '/system\.stateVersion = .*/a \
-        nix.package = pkgs.latest;\n \
+        nix.package = pkgs.nixVersions.latest;\n \
         nixpkgs.config.allowUnfree = true;\n \
         nix.extraOptions = \"experimental-features = nix-command flakes\";\n \
         services.openssh.enable = true;\n \
