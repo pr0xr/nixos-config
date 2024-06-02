@@ -73,7 +73,7 @@ in {
   };
 
   # setup windowing environment
-  services.xserver = if linuxGnome then {
+  /*services.xserver = if linuxGnome then {
     enable = true;
     xkb.layout = "se(dvorak_a5)";
     desktopManager.gnome.enable = true;
@@ -88,7 +88,7 @@ in {
       wallpaper.mode = "fill";
     };
 
-    services.displayManager = {
+    displayManager = {
       defaultSession = "none+i3";
       lightdm.enable = true;
 
@@ -101,6 +101,34 @@ in {
 
     windowManager = {
       i3.enable = true;
+    };
+  };*/
+
+  services = if linuxGnome then {
+    xserver {
+      enable = true;
+      xkb.layout = "se(dvorak_a5)";
+      desktopManager.gnome.enable = true;
+      displayManager.gdm.enable = true;
+    }
+  } else {
+    xserver {
+      enable = true;
+      xkb.layout = "se(dvorak_a5)";
+      dpi = 220;
+      windowManager = {
+        i3.enable = true;
+      };
+    }
+    displayManager = {
+      defaultSession = "none+i3";
+      lightdm.enable = true;
+
+      # AARCH64: For now, on Apple Silicon, we must manually set the
+      # display resolution. This is a known issue with VMware Fusion.
+      sessionCommands = ''
+        ${pkgs.xorg.xset}/bin/xset r rate 200 40
+      '';
     };
   };
 
