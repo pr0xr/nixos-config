@@ -75,12 +75,12 @@ in {
   # setup windowing environment
   services.xserver = if linuxGnome then {
     enable = true;
-    layout = "se(dvorak_a5)";
+    xkb.layout = "se(dvorak_a5)";
     desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
   } else {
     enable = true;
-    layout = "se(dvorak_a5)";
+    xkb.layout = "se(dvorak_a5)";
     dpi = 220;
 
     desktopManager = {
