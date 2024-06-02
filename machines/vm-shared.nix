@@ -105,14 +105,14 @@ in {
   };*/
 
   services = if linuxGnome then {
-    xserver {
+    xserver = {
       enable = true;
       xkb.layout = "se(dvorak_a5)";
       desktopManager.gnome.enable = true;
       displayManager.gdm.enable = true;
     }
   } else {
-    xserver {
+    xserver = {
       enable = true;
       xkb.layout = "se(dvorak_a5)";
       dpi = 220;
