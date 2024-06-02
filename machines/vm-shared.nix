@@ -88,7 +88,7 @@ in {
       wallpaper.mode = "fill";
     };
 
-    displayManager = {
+    services.displayManager = {
       defaultSession = "none+i3";
       lightdm.enable = true;
 
