@@ -108,7 +108,7 @@ in {
 
   } else {
     defaultSession = "none+i3";
-  }
+  };
 
 
   # Enable tailscale. We manually authenticate when we want with
