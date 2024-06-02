@@ -110,7 +110,7 @@ in {
       xkb.layout = "se(dvorak_a5)";
       desktopManager.gnome.enable = true;
       displayManager.gdm.enable = true;
-    }
+    };
   } else {
     xserver = {
       enable = true;
@@ -119,7 +119,7 @@ in {
       windowManager = {
         i3.enable = true;
       };
-    }
+    };
     displayManager = {
       defaultSession = "none+i3";
       lightdm.enable = true;
