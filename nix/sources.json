@@ -167,6 +167,18 @@
         "url": "https://github.com/buildpacks/pack/archive/2cf2c3442f574a2239ea3ee17aad7058fefe5410.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "rustaceanvim": {
+        "branch": "master",
+        "description": "Supercharge your Rust experience in Neovim! A heavily modified fork of rust-tools.nvim",
+        "homepage": "",
+        "owner": "mrcjkb",
+        "repo": "rustaceanvim",
+        "rev": "00a9508e8f95b8f8f9f60125a2082a53e0740987",
+        "sha256": "1mi11cfcg19yz52g4qz2g47647awq6lylcw3a8rn8bmfis8ph33f",
+        "type": "tarball",
+        "url": "https://github.com/mrcjkb/rustaceanvim/archive/00a9508e8f95b8f8f9f60125a2082a53e0740987.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "theme-bobthefish": {
         "branch": "master",
         "description": "A Powerline-style, Git-aware fish theme optimized for awesome.",
