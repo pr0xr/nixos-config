@@ -4,11 +4,11 @@ set -o errexit -x
 
 _defaultvalue REMOTE http://raw.githubusercontent.com/oxypwn/nixos-config/main
 _defaultvalue FILESYSTEM_TYPE ext4
-_defaultvalue FILESYSTEM _lib/preinstall/filesystem
+_defaultvalue FILESYSTEM _install/preinstall/filesystem
 _defaultvalue INSTALL_DRIVE /dev/sda
-_defaultvalue NIXOS _lib/preinstall/nixos
-_defaultvalue FSTAB _lib/preinstall/fstab
-_defaultvalue CHROOTPLZ _lib/chrootplz
+_defaultvalue NIXOS _install/preinstall/nixos
+_defaultvalue FSTAB _install/preinstall/fstab
+_defaultvalue CHROOTPLZ _install/chrootplz
 _defaultvalue CHROOT /mnt
 
 
